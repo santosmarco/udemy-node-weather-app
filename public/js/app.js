@@ -3,7 +3,7 @@ console.log("Client-side JS file is loaded!");
 const getAddressInput = () => document.getElementById("address").value;
 
 const getWeather = async (address) => {
-  const res = await fetch(`http://localhost:3000/weather?address=${address}`);
+  const res = await fetch(`/weather?address=${address}`);
   const data = await res.json();
   return data;
 };

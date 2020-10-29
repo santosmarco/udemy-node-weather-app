@@ -1,3 +1,4 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
@@ -5,6 +6,7 @@ const hbs = require("hbs");
 const utils = require("./utils");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Setup handlebars engine and views location
 app.set("view engine", "hbs");
@@ -72,6 +74,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on Port 3000.");
+app.listen(port, () => {
+  console.log(`Server is up on Port ${port}.`);
 });
